@@ -60,31 +60,56 @@ nav a:hover {
 }
 
 
-/* =========================
-   HERO
-========================= */
+/*HERO*/
 
 .hero {
-    min-height: 500px;
+    min-height: 560px;
 
     display: flex;
+    justify-content: space-between;
     align-items: center;
+
+    gap: 60px;
 
     padding: 80px 8%;
 
     background:
+        radial-gradient(
+            circle at 80% 40%,
+            #75401f 0%,
+            transparent 30%
+        ),
         linear-gradient(
-            90deg,
-            #17100c 0%,
-            #332016 60%,
-            #6d3d20 100%
+            120deg,
+            #110d0a 0%,
+            #29170f 55%,
+            #4a2918 100%
         );
 
     color: white;
+
+    overflow: hidden;
 }
 
 .hero-contenido {
-    max-width: 650px;
+    max-width: 700px;
+}
+
+.hero-ubicacion {
+    display: inline-block;
+
+    color: #f3d2b3;
+
+    border: 1px solid #9c6847;
+
+    padding: 7px 14px;
+
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
 }
 
 .subtitulo {
@@ -99,15 +124,27 @@ nav a:hover {
 }
 
 .hero h2 {
-    font-size: 55px;
-    margin-bottom: 20px;
+    font-size: 58px;
+    line-height: 1.05;
+
+    margin-bottom: 25px;
 }
 
-.hero p {
-    line-height: 1.7;
-    font-size: 18px;
+.hero-descripcion {
+    max-width: 600px;
+
+    color: #ded6d0;
+
+    line-height: 1.8;
+
+    font-size: 17px;
 
     margin-bottom: 30px;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 15px;
 }
 
 .boton {
@@ -122,6 +159,89 @@ nav a:hover {
     font-weight: bold;
 
     border-radius: 4px;
+}
+
+.boton-secundario {
+    display: inline-block;
+
+    color: white;
+
+    padding: 13px 27px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border: 1px solid #d7b99e;
+
+    border-radius: 4px;
+}
+
+.boton-secundario:hover {
+    background-color: white;
+    color: #352116;
+}
+
+
+/* SELLO DECORATIVO */
+
+.hero-decoracion {
+    min-width: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sello-barista {
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    border: 3px solid #e85d24;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    box-shadow:
+        0 0 0 12px rgba(232, 93, 36, 0.08),
+        0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.sello-barista::before {
+    content: "☕";
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.sello-barista span {
+    font-size: 12px;
+
+    letter-spacing: 6px;
+}
+
+.sello-barista strong {
+    color: #e85d24;
+
+    font-size: 35px;
+
+    letter-spacing: 2px;
+
+    margin: 4px 0;
+}
+
+.sello-barista small {
+    color: #d7b99e;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
 }
 
 
@@ -155,31 +275,65 @@ nav a:hover {
 
 .productos {
     display: flex;
-
     justify-content: center;
-
-    gap: 25px;
+    gap: 30px;
 }
 
 .producto {
     background-color: white;
 
-    width: 300px;
+    width: 310px;
 
-    padding: 30px;
+    padding: 35px 30px;
 
     text-align: center;
 
-    border-bottom: 4px solid #e85d24;
+    border-radius: 10px;
+
+    border-bottom: 5px solid #e85d24;
+
+    box-shadow:
+        0 10px 25px rgba(62, 38, 24, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 35px rgba(62, 38, 24, 0.20);
 }
 
 .icono {
-    font-size: 45px;
-    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f0e8;
+
+    border-radius: 50%;
+
+    font-size: 40px;
+
+    transition: transform 0.3s ease;
+}
+
+.producto:hover .icono {
+    transform: scale(1.1);
 }
 
 .producto h3 {
     color: #442817;
+
+    font-size: 21px;
 
     margin-bottom: 15px;
 }
@@ -187,14 +341,23 @@ nav a:hover {
 .producto p {
     color: #666;
 
-    line-height: 1.6;
+    line-height: 1.7;
 
     margin-bottom: 20px;
 }
 
 .producto strong {
+    display: inline-block;
+
     color: #e85d24;
-    font-size: 20px;
+
+    font-size: 22px;
+
+    background-color: #fff4ee;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
 }
 
 
@@ -344,13 +507,46 @@ footer {
         gap: 15px;
     }
 
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .hero h2 {
         font-size: 40px;
+    }
+
+    .hero-botones {
+        justify-content: center;
+    }
+
+    .hero-decoracion {
+        min-width: auto;
+    }
+
+    .sello-barista {
+        width: 220px;
+        height: 220px;
     }
 
     .productos {
         flex-direction: column;
         align-items: center;
+    }
+
+    .producto,
+    .promo-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-botones {
+        flex-wrap: wrap;
     }
 
     .lista-promociones {
