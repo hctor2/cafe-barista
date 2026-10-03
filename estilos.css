@@ -275,31 +275,65 @@ nav a:hover {
 
 .productos {
     display: flex;
-
     justify-content: center;
-
-    gap: 25px;
+    gap: 30px;
 }
 
 .producto {
     background-color: white;
 
-    width: 300px;
+    width: 310px;
 
-    padding: 30px;
+    padding: 35px 30px;
 
     text-align: center;
 
-    border-bottom: 4px solid #e85d24;
+    border-radius: 10px;
+
+    border-bottom: 5px solid #e85d24;
+
+    box-shadow:
+        0 10px 25px rgba(62, 38, 24, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 35px rgba(62, 38, 24, 0.20);
 }
 
 .icono {
-    font-size: 45px;
-    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f0e8;
+
+    border-radius: 50%;
+
+    font-size: 40px;
+
+    transition: transform 0.3s ease;
+}
+
+.producto:hover .icono {
+    transform: scale(1.1);
 }
 
 .producto h3 {
     color: #442817;
+
+    font-size: 21px;
 
     margin-bottom: 15px;
 }
@@ -307,14 +341,23 @@ nav a:hover {
 .producto p {
     color: #666;
 
-    line-height: 1.6;
+    line-height: 1.7;
 
     margin-bottom: 20px;
 }
 
 .producto strong {
+    display: inline-block;
+
     color: #e85d24;
-    font-size: 20px;
+
+    font-size: 22px;
+
+    background-color: #fff4ee;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
 }
 
 
@@ -489,6 +532,21 @@ footer {
     .productos {
         flex-direction: column;
         align-items: center;
+    }
+
+    .producto,
+    .promo-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-botones {
+        flex-wrap: wrap;
     }
 
     .lista-promociones {
